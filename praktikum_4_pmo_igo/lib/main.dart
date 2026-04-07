@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               left: 23,
             ),
             child: Container(
-              color: const Color.fromARGB(255, 132, 41, 134),
+              color: const Color.fromARGB(230, 132, 41, 134),
               child: Padding(
                 padding: const EdgeInsets.all(25.0),
                 child: Column(
@@ -130,7 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         "Selamat Datang Di Pemrograman Mobile",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 19.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         "Materi Object-Oriented Programming di Flutter",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 18.5,
+                          fontSize: 19.5,
                           fontWeight: FontWeight.bold,
                           color: const Color.fromARGB(255, 251, 255, 0),
                         ),
