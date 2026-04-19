@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_5_pmo_igo/bottom_nav.dart';
+import 'package:praktikum_5_pmo_igo/navbar_nav.dart';
 
 class Mahasiswa extends StatefulWidget {
   const Mahasiswa({super.key});
@@ -62,24 +63,7 @@ class _MahasiswaState extends State<Mahasiswa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 132, 41, 134),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset('images/logo_amikom_white.png', width: 40, height: 40),
-            SizedBox(width: 10),
-            Text(
-              "Praktikum 3 - Informatika",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
+      appBar: const NavbarNav(),
       body: Column(
         children: [
           Container(

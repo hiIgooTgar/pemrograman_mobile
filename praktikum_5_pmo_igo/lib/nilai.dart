@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_5_pmo_igo/bottom_nav.dart';
+import 'package:praktikum_5_pmo_igo/navbar_nav.dart';
 
 class Nilai extends StatefulWidget {
   const Nilai({super.key});
@@ -15,7 +16,7 @@ class _NilaiState extends State<Nilai> {
       "semester": "Semester 4",
       "sks": "3 SKS",
       "score":
-          "https://www.laserninja.com/wp-content/uploads/2020/11/35614-impression.jpg",
+          "https://png.pngtree.com/recommend-works/png-clipart/20250127/ourmid/pngtree-a-plus-grade-in-red-ink-png-image_15344585.png",
     },
     {
       "nama_matkul": "Statistika Probabilitas",
@@ -23,7 +24,7 @@ class _NilaiState extends State<Nilai> {
       "semester": "Semester 4",
       "sks": "3 SKS",
       "score":
-          "https://www.laserninja.com/wp-content/uploads/2020/11/35614-impression.jpg",
+          "https://png.pngtree.com/recommend-works/png-clipart/20250127/ourmid/pngtree-a-plus-grade-in-red-ink-png-image_15344585.png",
     },
     {
       "nama_matkul": "Kalkulus",
@@ -31,7 +32,7 @@ class _NilaiState extends State<Nilai> {
       "semester": "Semester 4",
       "sks": "3 SKS",
       "score":
-          "https://www.laserninja.com/wp-content/uploads/2020/11/35614-impression.jpg",
+          "https://png.pngtree.com/recommend-works/png-clipart/20250127/ourmid/pngtree-a-plus-grade-in-red-ink-png-image_15344585.png",
     },
     {
       "nama_matkul": "Bahasa Inggris",
@@ -39,7 +40,7 @@ class _NilaiState extends State<Nilai> {
       "semester": "Semester 4",
       "sks": "3 SKS",
       "score":
-          "https://www.laserninja.com/wp-content/uploads/2020/11/35614-impression.jpg",
+          "https://png.pngtree.com/recommend-works/png-clipart/20250127/ourmid/pngtree-a-plus-grade-in-red-ink-png-image_15344585.png",
     },
     {
       "nama_matkul": "Matematika Diskrit",
@@ -47,31 +48,14 @@ class _NilaiState extends State<Nilai> {
       "semester": "Semester 4",
       "sks": "3 SKS",
       "score":
-          "https://www.laserninja.com/wp-content/uploads/2020/11/35614-impression.jpg",
+          "https://png.pngtree.com/recommend-works/png-clipart/20250127/ourmid/pngtree-a-plus-grade-in-red-ink-png-image_15344585.png",
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 132, 41, 134),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset('images/logo_amikom_white.png', width: 40, height: 40),
-            SizedBox(width: 10),
-            Text(
-              "Praktikum 3 - Informatika",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
+      appBar: const NavbarNav(),
       body: Column(
         children: [
           Container(

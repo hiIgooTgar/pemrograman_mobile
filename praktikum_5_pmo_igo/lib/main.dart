@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:praktikum_5_pmo_igo/bottom_nav.dart';
+import 'package:praktikum_5_pmo_igo/navbar_nav.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -26,24 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 132, 41, 134),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset('images/logo_amikom_white.png', width: 40, height: 40),
-            SizedBox(width: 10),
-            Text(
-              "Praktikum 3 - Informatika",
-              style: TextStyle(
-                fontSize: 17,
-                fontWeight: FontWeight.w700,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
+      appBar: const NavbarNav(),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         decoration: BoxDecoration(
@@ -101,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               margin: EdgeInsets.only(bottom: 13),
               child: Text(
-                "Materi Bottom Navigation Bar dan Navigation",
+                "Collection, Mapping Collection dan Extract Widget",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 23.5,
