@@ -13,12 +13,15 @@ class _KemampuanBerbahasaState extends State<KemampuanBerbahasa> {
   List<String> bahasaList = [
     "Indonesia",
     "Inggris",
+    "Prancis",
+    "Spanyol",
+    "Russia",
+    "Melayu",
     "Arab",
     "Sunda",
     "Jawa",
     "Madura",
     "Jepang",
-    "Korea",
     "Mandarin",
   ];
 
@@ -28,12 +31,13 @@ class _KemampuanBerbahasaState extends State<KemampuanBerbahasa> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Kemampuan Berbahasa"),
+        SizedBox(height: 5),
         Container(
-          height: 90,
+          height: 125,
           child: GridView(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 3,
-              childAspectRatio: 4 / 1,
+              childAspectRatio: 3.5 / 1,
             ),
             children: bahasaList.map((e) => OpsiBahasa(strBahasa: e)).toList(),
           ),
