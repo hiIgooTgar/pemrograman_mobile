@@ -4,13 +4,12 @@ String? agamaDipilih;
 
 class Agama extends StatefulWidget {
   const Agama({super.key});
-
   @override
   State<Agama> createState() => _AgamaState();
 }
 
 class _AgamaState extends State<Agama> {
-  List<String> agamaList = [
+  final List<String> agamaList = [
     "Islam",
     "Kristen",
     "Katholik",
@@ -24,18 +23,19 @@ class _AgamaState extends State<Agama> {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: DropdownButton(
+      child: DropdownButton<String>(
         isExpanded: true,
-        icon: Icon(
+        underline: Container(height: 1, color: Colors.grey),
+        icon: const Icon(
           Icons.arrow_drop_down_circle,
-          color: const Color.fromARGB(255, 132, 41, 134),
+          color: Color.fromARGB(255, 132, 41, 134),
         ),
-        hint: Text("Plih Agama Anda"),
+        hint: const Text("Pilih Agama Anda"),
         value: agamaDipilih,
-        items: agamaList
-            .map((e) => DropdownMenuItem(child: Text(e), value: e))
-            .toList(),
-        onChanged: (value) {
+        items: agamaList.map((String e) {
+          return DropdownMenuItem<String>(value: e, child: Text(e));
+        }).toList(),
+        onChanged: (String? value) {
           setState(() {
             agamaDipilih = value;
           });
