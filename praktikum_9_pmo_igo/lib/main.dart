@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './page_computer.dart' as computer;
 import './page_headset.dart' as headset;
+import './page_computer.dart' as computer;
 import './page_radio.dart' as radio;
 import './page_smartphone.dart' as smartphone;
 
@@ -50,8 +50,8 @@ class _MyHomePageState extends State<MyHomePage>
       body: TabBarView(
         controller: controller,
         children: [
-          computer.Computer(),
           headset.Headset(),
+          computer.Computer(),
           radio.Radio(),
           smartphone.Smartphone(),
         ],
