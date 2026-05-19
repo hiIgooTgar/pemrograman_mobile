@@ -10,7 +10,6 @@ void main() {
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -19,8 +18,6 @@ class _HomePageState extends State<HomePage> {
   final Color primaryGreen = const Color.fromARGB(255, 0, 122, 51);
   String selectedCategory = "Semua";
   String searchQuery = "";
-
-  // Data Master Menu
   final List<Map<String, dynamic>> allMenus = [
     {
       "nama": "Nasi Goreng Spesial",
@@ -58,7 +55,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Logika Filter: Berdasarkan Kategori DAN Pencarian
     List<Map<String, dynamic>> displayedMenus = allMenus.where((menu) {
       bool matchCategory =
           selectedCategory == "Semua" || menu['kategori'] == selectedCategory;
@@ -93,7 +89,6 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Promo Banner
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -127,8 +122,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Search Bar
               TextField(
                 onChanged: (value) => setState(() => searchQuery = value),
                 decoration: InputDecoration(
@@ -143,8 +136,6 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 20),
-
-              // Kategori
               const Text(
                 "Kategori",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
@@ -166,8 +157,6 @@ class _HomePageState extends State<HomePage> {
                 }).toList(),
               ),
               const SizedBox(height: 20),
-
-              // Menu List
               Text(
                 "Menu Pilihan (${displayedMenus.length})",
                 style: const TextStyle(

@@ -15,15 +15,12 @@ class WelcomePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start, // Rata Kiri
             children: [
               const SizedBox(height: 50),
-              // Logo atau Icon Kecil (Opsional)
               const Icon(
                 Icons.auto_awesome_mosaic_rounded,
                 size: 50,
                 color: Colors.black,
               ),
               const SizedBox(height: 40),
-
-              // Judul Besar Terinspirasi dari Gambar
               const Text(
                 'Your Journey to\nAnswers Starts\nHere!',
                 style: TextStyle(
@@ -34,10 +31,7 @@ class WelcomePage extends StatelessWidget {
                   letterSpacing: -1,
                 ),
               ),
-
               const SizedBox(height: 20),
-
-              // Deskripsi Singkat
               const Text(
                 'Take a step towards movement. Our AI is always here to help you with ideas, plans, or solutions to any challenge.',
                 style: TextStyle(
@@ -46,9 +40,7 @@ class WelcomePage extends StatelessWidget {
                   height: 1.5,
                 ),
               ),
-
               const Spacer(), // Dorong tombol ke bawah
-              // Tombol Get Started (Warna Hijau Khusus)
               SizedBox(
                 width: double.infinity,
                 height: 60,
@@ -84,10 +76,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
               ),
-
               const SizedBox(height: 20),
-
-              // Link ke Login
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

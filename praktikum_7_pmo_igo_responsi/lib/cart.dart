@@ -3,17 +3,13 @@ import 'package:praktikum_7_pmo_igo_responsi/template/bottom_navigation.dart';
 
 class CartPage extends StatefulWidget {
   final Map<String, dynamic>? addedItem; // Menampung item yang baru ditambahkan
-
   const CartPage({super.key, this.addedItem});
-
   @override
   State<CartPage> createState() => _CartPageState();
 }
 
 class _CartPageState extends State<CartPage> {
   final Color primaryGreen = const Color.fromARGB(255, 0, 122, 51);
-
-  // Data keranjang belanja
   List<Map<String, dynamic>> cartItems = [
     {
       "nama": "Pizza Mozzarella",
@@ -27,7 +23,6 @@ class _CartPageState extends State<CartPage> {
   @override
   void initState() {
     super.initState();
-    // Jika ada item baru dikirim dari Home, tambahkan ke list
     if (widget.addedItem != null) {
       cartItems.add({...widget.addedItem!, "qty": 1});
     }
