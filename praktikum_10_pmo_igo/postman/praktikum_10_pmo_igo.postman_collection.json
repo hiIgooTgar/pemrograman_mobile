@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "568cd0e6-d2b3-404f-9fd3-92eaec87cca0",
+    "name": "praktikum_10_pmo_igo",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25957355"
+  },
+  "item": [
+    {
+      "name": "Get All Data Pendaftaran",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/pendaftaran",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "pendaftaran"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Data Pendaftaran by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/pendaftaran/4",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "pendaftaran",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Data Pendaftaran",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nama\": \"Igo Alseon Sinaga\",\r\n    \"email\": \"igoalseon@gmail.com\",\r\n    \"no_telepon\": \"085142315241\",\r\n    \"jenis_kelamin\": \"Laki-Laki\",\r\n    \"bahasa\": \"Indonesia,Inggris,Mandarin\",\r\n    \"agama\": \"Katholik\",\r\n    \"tanggal_daftar\": \"2025-02-22\",\r\n    \"jam_daftar\": \"11:33:45\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/pendaftaran",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "pendaftaran"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Data Pendaftaran",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nama\": \"Tegar Alseon Sinaga\",\r\n    \"email\": \"tegaralseon@gmail.com\",\r\n    \"no_telepon\": \"085142315241\",\r\n    \"jenis_kelamin\": \"Laki-Laki\",\r\n    \"bahasa\": \"Indonesia,Inggris,Mandarin\",\r\n    \"agama\": \"Katholik\",\r\n    \"tanggal_daftar\": \"2025-02-22\",\r\n    \"jam_daftar\": \"11:33:45\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/pendaftaran/6",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "pendaftaran",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Data Pendaftaran",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{url}}/pendaftaran/6",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "pendaftaran",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
