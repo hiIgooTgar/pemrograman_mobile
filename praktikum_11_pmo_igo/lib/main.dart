@@ -13,14 +13,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromARGB(255, 132, 41, 134),
+          backgroundColor: Color(0xFF0B2F9F),
           foregroundColor: Colors.white,
         ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromARGB(255, 132, 41, 134),
-            foregroundColor: Colors.white,
-          ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF0B2F9F),
+          primary: const Color(0xFF0B2F9F),
+          secondary: const Color(0xFF00809D),
         ),
       ),
       debugShowCheckedModeBanner: false,

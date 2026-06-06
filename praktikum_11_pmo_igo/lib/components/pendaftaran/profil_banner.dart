@@ -9,7 +9,14 @@ class ProfilBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 35, right: 23, left: 23),
-      color: const Color.fromARGB(230, 132, 41, 134),
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF0B2F9F), Color(0xFF00809D)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(8),
+      ),
       child: Padding(
         padding: const EdgeInsets.all(28.0),
         child: Column(

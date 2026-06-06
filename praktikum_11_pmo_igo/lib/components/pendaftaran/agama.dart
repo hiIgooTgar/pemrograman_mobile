@@ -25,7 +25,7 @@ class Agama extends StatelessWidget {
         underline: Container(height: 1, color: Colors.grey),
         icon: const Icon(
           Icons.arrow_drop_down_circle,
-          color: Color.fromARGB(255, 132, 41, 134),
+          color: Color(0xFF0B2F9F),
         ),
         hint: const Text("Pilih Agama Anda"),
         value: agamaDipilih,

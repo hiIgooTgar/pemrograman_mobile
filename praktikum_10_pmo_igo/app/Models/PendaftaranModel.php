@@ -93,4 +93,13 @@ class PendaftaranModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function update($id = null, $data = null): bool
+    {
+        if ($id !== null) {
+            $this->validationRules['email'] = "required|valid_email|is_unique[pendaftaran.email,id,{$id}]";
+        }
+
+        return parent::update($id, $data);
+    }
 }

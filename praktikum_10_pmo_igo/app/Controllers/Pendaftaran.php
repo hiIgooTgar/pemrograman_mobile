@@ -47,12 +47,14 @@ class Pendaftaran extends ResourceController
     public function update($id = null)
     {
         $data = $this->request->getJSON(true) ?? $this->request->getRawInput();
-
         if (!$this->model->find($id)) {
             return $this->failNotFound('Data pendaftar tidak ditemukan');
         }
 
-        if (!$this->validate($this->model->validationRules, $this->model->validationMessages)) {
+        $rules = $this->model->validationRules;
+        $rules['email'] = "required|valid_email|is_unique[pendaftaran.email,id,{$id}]";
+
+        if (!$this->validate($rules, $this->model->validationMessages)) {
             return $this->fail($this->validator->getErrors());
         }
 

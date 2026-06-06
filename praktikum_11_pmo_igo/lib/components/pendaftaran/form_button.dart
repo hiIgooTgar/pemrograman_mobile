@@ -26,30 +26,70 @@ class FormTombolAksi extends StatelessWidget {
           alignment: WrapAlignment.center,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            ElevatedButton.icon(
-              onPressed: onSimpanAtauUpdate,
-              icon: Icon(isEditMode ? Icons.edit : Icons.save),
-              label: Text(isEditMode ? "Ubah Data" : "Simpan Data"),
+            Container(
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF0B2F9F), Color(0xFF00809D)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ElevatedButton.icon(
+                onPressed: onSimpanAtauUpdate,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                icon: Icon(isEditMode ? Icons.edit : Icons.save),
+                label: Text(isEditMode ? "Ubah Data" : "Simpan Data"),
+              ),
             ),
             ElevatedButton.icon(
               onPressed: onReset,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.grey[700],
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
               ),
               icon: const Icon(Icons.refresh),
               label: const Text("Reset"),
             ),
-            ElevatedButton.icon(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const DataPendaftaran(),
+            Container(
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xFF0B2F9F), Color(0xFF00809D)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DataPendaftaran(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.transparent,
+                  shadowColor: Colors.transparent,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                );
-              },
-              icon: const Icon(Icons.people),
-              label: const Text("Lihat Data"),
+                ),
+                icon: const Icon(Icons.people),
+                label: const Text("Lihat Data"),
+              ),
             ),
           ],
         ),

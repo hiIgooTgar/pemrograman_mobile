@@ -13,6 +13,14 @@ use CodeIgniter\Filters\PageCache;
 use CodeIgniter\Filters\PerformanceMetrics;
 use CodeIgniter\Filters\SecureHeaders;
 
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, ngrok-skip-browser-warning");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+
+if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {
+    die();
+}
+
 class Filters extends BaseFilters
 {
     /**

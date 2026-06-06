@@ -88,28 +88,31 @@ class _MyHomePageState extends State<MyHomePage> {
       nama: namaController.text,
       email: emailController.text,
       noTelepon: noTelpController.text,
-      jenisKelamin: jenisKelamin.toString(),
+      jenisKelamin: jenisKelamin ?? "",
       bahasa: bahasaDipilihList.toString(),
-      agama: agamaDipilih.toString(),
+      agama: agamaDipilih ?? "",
       tanggalDaftar: tanggalDaftarController.text,
       jamDaftar: jamDaftarController.text,
     );
 
     if (pendaftaran.sudahValid(context)) {
-      bool sukses = false;
+      String? pesanErrorBackend;
 
       if (isEditMode) {
-        sukses = await _pendaftaranController.updateData(
-          pendaftaran.id!,
+        pesanErrorBackend = await _pendaftaranController.updateData(
+          pendaftaran.id!.toString(),
           pendaftaran,
         );
       } else {
-        sukses = await _pendaftaranController.createData(pendaftaran);
+        pesanErrorBackend = await _pendaftaranController.createData(
+          pendaftaran,
+        );
       }
 
-      if (sukses) {
+      if (pesanErrorBackend == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
+            backgroundColor: Colors.green,
             content: Text(
               isEditMode
                   ? "Data Berhasil Diperbarui!"
@@ -117,15 +120,15 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         );
-
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const DataPendaftaran()),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("Aksi Gagal! Terjadi kesalahan pada server API."),
+          SnackBar(
+            backgroundColor: Colors.redAccent,
+            content: Text("Aksi Gagal! $pesanErrorBackend"),
           ),
         );
       }
@@ -138,9 +141,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: const NavbarNav(),
       body: ListView(
         children: [
-          // Menggunakan Komponen Profil Banner
           ProfilBanner(isEditMode: isEditMode),
-
           Padding(
             padding: const EdgeInsets.only(
               top: 25,
@@ -215,7 +216,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 TanggalDaftar(controller: tanggalDaftarController),
                 const SizedBox(height: 3.5),
                 JamDaftar(controller: jamDaftarController),
-
                 FormTombolAksi(
                   isEditMode: isEditMode,
                   onSimpanAtauUpdate: simpanAtauUpdateData,

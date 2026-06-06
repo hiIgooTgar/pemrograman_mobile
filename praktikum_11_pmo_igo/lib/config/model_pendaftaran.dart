@@ -24,7 +24,7 @@ class Pendaftaran {
   });
 
   Pendaftaran.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+    id = json['id']?.toString();
     nama = json['nama'];
     email = json['email'];
     noTelepon = json['no_telepon'];
@@ -37,7 +37,7 @@ class Pendaftaran {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
+    if (id != null) data['id'] = id;
     data['nama'] = nama;
     data['email'] = email;
     data['no_telepon'] = noTelepon;
@@ -50,30 +50,30 @@ class Pendaftaran {
   }
 
   bool sudahValid(BuildContext context) {
-    if (nama == null || nama!.isEmpty) {
+    if (nama == null || nama!.trim().isEmpty) {
       tampilkanPesan(context, "Nama Wajib Diisi");
       return false;
-    } else if (email == null || email!.isEmpty) {
+    } else if (email == null || email!.trim().isEmpty) {
       tampilkanPesan(context, "Email Wajib Diisi");
       return false;
-    } else if (noTelepon == null || noTelepon!.isEmpty) {
+    } else if (noTelepon == null || noTelepon!.trim().isEmpty) {
       tampilkanPesan(context, "Nomor Telepon Wajib Diisi");
       return false;
     } else if (jenisKelamin == null ||
-        jenisKelamin == "null" ||
-        jenisKelamin!.isEmpty) {
+        jenisKelamin!.trim().isEmpty ||
+        jenisKelamin == "null") {
       tampilkanPesan(context, "Silahkan Pilih Salah Satu Jenis Kelamin");
       return false;
-    } else if (bahasa == null || bahasa == "[]" || bahasa!.isEmpty) {
+    } else if (bahasa == null || bahasa == "[]" || bahasa!.trim().isEmpty) {
       tampilkanPesan(context, "Wajib Memilih Minimal Satu Bahasa");
       return false;
-    } else if (agama == null || agama == "null" || agama!.isEmpty) {
+    } else if (agama == null || agama!.trim().isEmpty || agama == "null") {
       tampilkanPesan(context, "Wajib Memilih Satu Agama");
       return false;
-    } else if (tanggalDaftar == null || tanggalDaftar!.isEmpty) {
+    } else if (tanggalDaftar == null || tanggalDaftar!.trim().isEmpty) {
       tampilkanPesan(context, "Tanggal Daftar Wajib Diisi");
       return false;
-    } else if (jamDaftar == null || jamDaftar!.isEmpty) {
+    } else if (jamDaftar == null || jamDaftar!.trim().isEmpty) {
       tampilkanPesan(context, "Jam Daftar Wajib Diisi");
       return false;
     }

@@ -71,9 +71,7 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
       body: isLoading
           ? const Center(
               child: CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  Color.fromARGB(255, 132, 41, 134),
-                ),
+                valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF0B2F9F)),
               ),
             )
           : errorMessage.isNotEmpty
@@ -99,7 +97,11 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
                 ),
                 margin: const EdgeInsets.all(23.0),
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(230, 132, 41, 134),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xFF0B2F9F), Color(0xFF00809D)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
@@ -124,12 +126,7 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
                       onPressed: () => Navigator.pop(context),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
-                        foregroundColor: const Color.fromARGB(
-                          255,
-                          132,
-                          41,
-                          134,
-                        ),
+                        foregroundColor: const Color(0xFF0B2F9F),
                       ),
                       icon: const Icon(Icons.arrow_back),
                       label: const Text("Kembali ke Form"),
@@ -146,18 +143,18 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
                   return Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
+                      padding: const EdgeInsets.only(bottom: 16),
                       child: TextButton.icon(
                         onPressed: () => Navigator.pop(context),
                         icon: const Icon(
                           Icons.arrow_back,
                           size: 18,
-                          color: Color.fromARGB(255, 132, 41, 134),
+                          color: Color(0xFF0B2F9F),
                         ),
                         label: const Text(
                           "Kembali ke Form",
                           style: TextStyle(
-                            color: Color.fromARGB(255, 132, 41, 134),
+                            color: Color(0xFF0B2F9F),
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -168,79 +165,90 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
 
                 int dataIndex = index - 1;
                 final data = pendaftaranList[dataIndex];
-
-                return Card(
+                return Container(
                   margin: const EdgeInsets.only(bottom: 18),
-                  color: const Color.fromARGB(230, 132, 41, 134),
-                  child: ListTile(
-                    title: Row(
-                      children: [
-                        const Icon(
-                          Icons.person,
-                          size: 16.5,
-                          color: Colors.white,
-                        ),
-                        const SizedBox(width: 4.5),
-                        Text(
-                          data.nama ?? '-',
-                          style: const TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.w500,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [Color(0xFF0B2F9F), Color(0xFF00809D)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Card(
+                    margin: EdgeInsets.zero,
+                    color: Colors.transparent,
+                    elevation: 0,
+                    child: ListTile(
+                      title: Row(
+                        children: [
+                          const Icon(
+                            Icons.person,
+                            size: 16.5,
                             color: Colors.white,
                           ),
-                        ),
-                      ],
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          data.email ?? '-',
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                          data.noTelepon ?? '-',
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                          data.jenisKelamin ?? '-',
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                          data.agama ?? '-',
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                          "Bahasa: ${data.bahasa ?? '-'}",
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                        Text(
-                          "${data.tanggalDaftar ?? ''} ${data.jamDaftar ?? ''}",
-                          style: const TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.edit, color: Colors.white),
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) =>
-                                    MyHomePage(dataUntukDiedit: data),
-                              ),
-                            );
-                          },
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.delete, color: Colors.white),
-                          onPressed: () =>
-                              dialogHapus(dataIndex, data.id, data.nama),
-                        ),
-                      ],
+                          const SizedBox(width: 4.5),
+                          Text(
+                            data.nama ?? '-',
+                            style: const TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            data.email ?? '-',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            data.noTelepon ?? '-',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            data.jenisKelamin ?? '-',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            data.agama ?? '-',
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            "Bahasa: ${data.bahasa ?? '-'}",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                          Text(
+                            "${data.tanggalDaftar ?? ''} ${data.jamDaftar ?? ''}",
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                      trailing: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.edit, color: Colors.white),
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      MyHomePage(dataUntukDiedit: data),
+                                ),
+                              );
+                            },
+                          ),
+                          IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.white),
+                            onPressed: () =>
+                                dialogHapus(dataIndex, data.id, data.nama),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -255,7 +263,7 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
       builder: (context) => AlertDialog(
         title: const Text(
           "Hapus Data",
-          style: TextStyle(color: Color.fromARGB(230, 132, 41, 134)),
+          style: TextStyle(color: Color(0xFF0B2F9F)),
         ),
         content: Text("Apakah anda yakin akan hapus data ${nama ?? ''} ?"),
         actions: [
@@ -270,7 +278,10 @@ class _DataPendaftaranState extends State<DataPendaftaran> {
                 );
               }
             },
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
             child: const Text("Ya, hapus!"),
           ),
           ElevatedButton(

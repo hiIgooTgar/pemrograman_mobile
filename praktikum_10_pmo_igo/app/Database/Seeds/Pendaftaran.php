@@ -30,7 +30,7 @@ class Pendaftaran extends Seeder
                 'jam_daftar'     => '11:20:15',
             ],
             [
-                'nama'           => 'Indah Ayu Putri Ningsih',
+                'nama'           => 'Indah Ayu Putri',
                 'email'          => 'indahayu@gmail.com',
                 'no_telepon'     => '081572513514',
                 'jenis_kelamin'  => 'Perempuan',
