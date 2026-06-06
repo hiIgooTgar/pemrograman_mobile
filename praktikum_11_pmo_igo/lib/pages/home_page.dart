@@ -97,7 +97,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     if (pendaftaran.sudahValid(context)) {
       String? pesanErrorBackend;
-
       if (isEditMode) {
         pesanErrorBackend = await _pendaftaranController.updateData(
           pendaftaran.id!.toString(),
@@ -108,7 +107,6 @@ class _MyHomePageState extends State<MyHomePage> {
           pendaftaran,
         );
       }
-
       if (pesanErrorBackend == null) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
