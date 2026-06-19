@@ -164,7 +164,7 @@ class CardPesanan extends StatelessWidget {
                       ),
                       const SizedBox(height: 6),
                       Text(
-                        "RM $harga",
+                        "RP $harga",
                         style: const TextStyle(
                           color: Color(0xFF0B2F9F),
                           fontWeight: FontWeight.bold,
